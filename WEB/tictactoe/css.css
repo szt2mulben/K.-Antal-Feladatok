@@ -1,0 +1,105 @@
+.fooldal {
+    position: relative;
+   height: 100vh;
+   background-color: #7d7874 !important;
+   border-radius: 15px;
+   border: dashed;
+  }
+  .container {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .torles:after {  
+    content: "";
+    display: table;
+    clear: both;
+  }
+  p {
+    font-weight: 400;
+  }
+  h3 {
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 10px 0;
+  }
+  .tabla {
+    position: relative;
+    width: 22em;
+    font-family: sans-serif;
+    font-weight: 700;
+    margin: 0 auto;
+  }
+  .sor {
+    float: left;
+  }
+  .sor:first-child .hely {
+    border-top: 0;
+  }
+  .hely {
+    color: #9d9185 ;
+    border-color: #000000;
+    font-size: 6em;
+    width: 1.2em;
+    height: 1.2em;
+    line-height: 1.2em;
+    float: left;
+    border-style: solid;
+    border-width: 3px 3px 0 0;
+    text-align: center;
+    cursor: default;
+  }
+  .hely:last-child {
+    border-right: 0px;
+  }
+  .jatekosx {
+    color: white;
+  }
+  .jatekoso {
+    color: black;
+  }
+  .valasztas-container{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 70%;
+    display: none;
+  }
+  .valasztas {
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    background-color: hsla(27, 6%, 65%, 0.95);
+    color: white;
+    font-size: 1em;
+    height: 100%;
+    padding: 30px;
+    border-radius: 10px;
+  }
+  .vegecucc {
+    display: none;
+  } 
+  .valasztas1 span{
+    line-height: 1.5em;
+    width: 1.5em;
+    height: 1.5em;
+    font-size: 3em;
+    border-radius: 10px;
+  }
+  .vegecucc span {
+    color: white;
+    text-transform: uppercase;
+    line-height: 1.5em;
+    font-size: 1.3em;
+    padding: 0.2em 0.4em;
+  }
+  .gomb span {
+    display: inline-block;
+    background-color: hsla(30, 10%, 20%, 0.95);
+    margin: 0.2em 0.2em 0 0.2em;
+  }
+  .gomb span:hover {
+    cursor: pointer;
+    background-color: hsla(30, 10%, 30%, 0.95);
+  }

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Weboldal</title>
+    <style>
+        :root {
+            --color1: #8a2be2;
+            --color2: #808080;
+            --color3: #008000;
+            --color4: #0000ff;
+            --color5: #ffff00;
+            --color6: #ff69b4;
+            --color7: #ff0000;
+            --color8: #ff8c00;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 2px;
+            background-color: var(--background-color, #f0f0f0);
+        }
+
+        .mezofold {
+            width: calc(25% - 10px);
+            padding: 20px;
+            background-color: var(--lila);
+            border: 1px solid #ddd;
+            margin: 3px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 18px;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .mezofold {
+                width: calc(33.33% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mezofold {
+                width: calc(50% - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mezofold" style="background-color: var(--color1);"></div>
+    <div class="mezofold" style="background-color: var(--color2);"></div>
+    <div class="mezofold" style="background-color: var(--color3);"></div>
+    <div class="mezofold" style="background-color: var(--color4);"></div>
+    <div class="mezofold" style="background-color: var(--color5);"></div>
+    <div class="mezofold" style="background-color: var(--color6);"></div>
+    <div class="mezofold" style="background-color: var(--color7);"></div>
+    <div class="mezofold" style="background-color: var(--color8);"></div>
+
+    <input type="color" id="szinValaszto">
+    <input type="number" id="elemValaszto" min="1" max="8" placeholder="Elem sorszáma">
+    <button id="hatterValtoztato">Háttér Szín Változtatása</button>
+
+    <script>
+        const root = document.querySelector(':root');
+        const szinValaszto = document.getElementById('szinValaszto');
+        const elemValaszto = document.getElementById('elemValaszto');
+        const hatterValtoztato = document.getElementById('hatterValtoztato');
+
+        hatterValtoztato.addEventListener('click', () => {
+            const ujHatterSzin = szinValaszto.value;
+            const elemSorszam = elemValaszto.value;
+            if (elemSorszam >= 1 && elemSorszam <= 8) {
+                const cssVar = `--color${elemSorszam}`;
+                console.log(cssVar)
+                root.style.setProperty(cssVar, ujHatterSzin);
+            } else {
+                alert('Érvénytelen elem sorszám. Kérlek, válassz 1 és 8 közötti számot.');
+            }
+        });
+    </script>
+</body>
+</html>

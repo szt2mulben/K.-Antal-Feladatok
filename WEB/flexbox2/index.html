@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flexbox Weboldal</title>
+    <style>
+        :root {
+            --lila: #8a2be2;
+            --szurke: #808080;
+            --zold: #008000;
+            --kek: #0000ff;
+            --sarga: #ffff00;
+            --roszaszin: #ff69b4;
+            --piros: #ff0000;
+            --narancssarga: #ff8c00;
+        }
+
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+            gap: 2px;
+            background-color: var(--background-color, #f0f0f0);
+        }
+
+        .mezofold {
+            width: calc(25% - 10px);
+            height: 100px;
+            padding: 20px;
+            background-color: var(--lila);
+            border: 1px solid #ddd;
+            margin: 3px;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .mezofold {
+                width: calc(33.33% - 10px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .mezofold {
+                width: calc(50% - 10px);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="mezofold" style="background-color: var(--lila);"></div>
+    <div class="mezofold" style="background-color: var(--szurke);"></div>
+    <div class="mezofold" style="background-color: var(--zold);"></div>
+    <div class="mezofold" style="background-color: var(--kek);"></div>
+    <div class="mezofold" style="background-color: var(--sarga);"></div>
+    <div class="mezofold" style="background-color: var(--roszaszin);"></div>
+    <div class="mezofold" style="background-color: var(--piros);"></div>
+    <div class="mezofold" style="background-color: var(--narancssarga);"></div>
+
+    <input type="range" id="szelessegValaszto" min="200" max="350" placeholder="Szélesség (px)">
+    <input type="range" id="magassagValaszto" min="200" max="350" placeholder="Magasság (px)">
+    <button id="meretValtoztato">Méret</button>
+
+    <script>
+        const mezofoldList = document.querySelectorAll('.mezofold');
+        const szelessegValaszto = document.getElementById('szelessegValaszto');
+        const magassagValaszto = document.getElementById('magassagValaszto');
+        const meretValtoztato = document.getElementById('meretValtoztato');
+
+        meretValtoztato.addEventListener('click', () => {
+            const szelesseg = szelessegValaszto.value;
+            const magassag = magassagValaszto.value;
+
+            mezofoldList.forEach((mezofold) => {
+                mezofold.style.width = `${szelesseg}px`;
+                mezofold.style.height = `${magassag}px`;
+            });
+        });
+    </script>
+</body>
+</html>
