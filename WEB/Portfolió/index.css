@@ -251,3 +251,16 @@ footer {
     bottom: 0; 
     color: #343a40; 
   }
+  .social-icon {
+    font-size: 37px; /* Állítsd be az ikonok méretét a megfelelő értékre */
+    color: #ffffff; /* Állítsd be az ikonok színét a hexa vagy rgba kóddal */
+    margin-right: 10px;
+}
+
+/* Opcionális: alkalmazd a stílust a mobil nézetekre is */
+@media (max-width: 768px) {
+    .social-icon {
+        font-size: 18px;
+        margin-right: 5px;
+    }
+}
